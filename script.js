@@ -13,7 +13,7 @@ let form = document.getElementById('preferences-form'); // gets info from form
 let nameId = document.getElementById('name');//selects the section where you put name in
 let greeting = document.getElementById('greeting');// selects greeting 
 let background = document.getElementById ('background-color');//selects section for background color
-
+let font = document.getElementById('foreground-color')//selects the font 
 
 
 
@@ -23,11 +23,14 @@ function preferences(){ //function to get saved info from local storage
     if (myName){ //once name is entered the greeting Hi plus name entered pops up
         greeting.textContent= `Hi ${myName} 👋!`;
     }
- let background = localStorage.getItem('background-color'); //gets color info from  local storage
- if (background){document.body.style.backgroundColor = background; //gets color
+    let background = localStorage.getItem('background-color'); //gets color info from  local storage
+    if (background){document.body.style.backgroundColor = background; //gets color
 
  }
- 
+    let font =localStorage.getItem('foreground-color'); //gets color for font from local storage
+    if (font){document.body.style.color = font;
+
+}
     
 }
 
@@ -39,7 +42,7 @@ form.addEventListener('submit',(event)=>{// listener for submit is hit
     event.preventDefault();// prevents default 
     localStorage.setItem('name',nameId.value); // saves name info 
     localStorage.setItem('background-color', background.value);//saves info for background
-
+    localStorage.setItem('foreground-color',font.value);//saves font 
 
 
 
