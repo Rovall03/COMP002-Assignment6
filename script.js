@@ -25,7 +25,6 @@ preferences();//apply preferences
 form.addEventListener('submit',(event)=>{// listener for submit is hit 
     event.preventDefault();// prevents default 
     localStorage.setItem('name',nameId.value); // saves name info 
-    preferences();// apply preferences even after refresh 
- 
+    preferences(); //calls function again 
 })
   
