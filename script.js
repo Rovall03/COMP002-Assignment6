@@ -12,20 +12,38 @@
 let form = document.getElementById('preferences-form'); // gets info from form 
 let nameId = document.getElementById('name');//selects the section where you put name in
 let greeting = document.getElementById('greeting');// selects greeting 
+let background = document.getElementById ('background-color');//selects section for background color
+
+
+
+
 
 function preferences(){ //function to get saved info from local storage 
     let myName = localStorage.getItem('name');//gets the saved name
     if (myName){ //once name is entered the greeting Hi plus name entered pops up
         greeting.textContent= `Hi ${myName} 👋!`;
     }
+ let background = localStorage.getItem('background-color'); //gets color info from  local storage
+ if (background){document.body.style.backgroundColor = background; //gets color
+
+ }
+ 
+    
 }
 
 preferences();//apply preferences 
 
+
+
 form.addEventListener('submit',(event)=>{// listener for submit is hit 
     event.preventDefault();// prevents default 
     localStorage.setItem('name',nameId.value); // saves name info 
+    localStorage.setItem('background-color', background.value);//saves info for background
+
+
+
+
     preferences(); //calls function again 
-    alert ('Got it 👍!')
+    alert ('Got it 👍!')//box pops up alert after submit 
 })
   
