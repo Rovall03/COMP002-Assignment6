@@ -16,7 +16,7 @@ let greeting = document.getElementById('greeting');// selects greeting
 function preferences(){ //function to get saved info from local storage 
     let myName = localStorage.getItem('name');//gets the saved name
     if (myName){ //once name is entered the greeting Hi plus name entered pops up
-        greeting.textContent= `Hi ${myName}!`;
+        greeting.textContent= `Hi ${myName} 👋!`;
     }
 }
 
@@ -26,5 +26,6 @@ form.addEventListener('submit',(event)=>{// listener for submit is hit
     event.preventDefault();// prevents default 
     localStorage.setItem('name',nameId.value); // saves name info 
     preferences(); //calls function again 
+    alert ('Got it 👍!')
 })
   
